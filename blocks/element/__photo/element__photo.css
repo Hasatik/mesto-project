@@ -1,0 +1,14 @@
+.element__photo {
+  width: 282px;
+  height: 282px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  object-fit: cover;
+}
+
+/* @media screen and (max-width: 768px) {
+  .element__photo {
+    max-width: none;
+    width: 100%;
+  }
+} */
