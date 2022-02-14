@@ -1,96 +1,166 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место Russia</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
-  <title>Место Russia</title>
-</head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        src="./images/header-logo.svg"
+        alt="Логотип Mesto Russia"
+      />
+    </header>
 
-<body class="page">
+    <main>
+      <section class="profile">
+        <div class="profile__information">
+          <img
+            class="profile__avatar"
+            src="./images/avatar.jpg"
+            alt="Фотография Жака-Ива Кусто"
+          />
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <p class="profile__description">Исследователь океана</p>
+          <button type="button" class="profile__edit-button"></button>
+          <button
+            type="button"
+            aria-label="Лайк"
+            class="profile__add-button"
+          ></button>
+        </div>
+      </section>
 
-  <header class="header">
-    <img class="header__logo" src="./images/header-logo.svg" alt="Логотип Mesto Russia">
-  </header>
+      <section class="elements">
+        <ul class="elements__container">
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min01.jpg"
+              alt="Фото Карачаевска"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Карачаевск</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min02.jpg"
+              alt="Фото Горы Эльбрус"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Гора Эльбрус</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min03.jpg"
+              alt="Фото Домбаев"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Домбай</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min04.jpg"
+              alt="Фото Байкала"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Байкал</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min05.jpg"
+              alt="Фото Ергаков"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Ергаки</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+          <li class="element">
+            <img
+              class="element__photo"
+              src="./images/places-card-photo-min06.jpg"
+              alt="Фото Хибин"
+            />
+            <div class="element__photo-description">
+              <h2 class="element__photo-name">Хибины</h2>
+              <button
+                type="button"
+                aria-label="Лайк"
+                class="element__like-button"
+              ></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-  <main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
 
-    <section class="profile">
-      <div class="profile__information">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Фотография Жака-Ива Кусто">
-        <h1 class="profile__name">Жак-Ив Кусто</h1>
-        <p class="profile__description">Исследователь океана</p>
-        <button type="button" class="profile__edit-button"></button>
-        <button type="button" aria-label="Лайк" class="profile__add-button"></button>
+    <div class="popup popup_opened">
+      <div class="popup__container">
+        <form name="popup" class="popup__form">
+          <h3 class="popup__title">Редактировать профиль</h3>
+          <fieldset class="popup__inputs">
+            <input
+              name="user"
+              type="text"
+              class="popup__input"
+              value="Жак-Ив Кусто"
+            />
+            <input
+              name="profession"
+              type="text"
+              class="popup__input"
+              value="Исследователь океана"
+            />
+          </fieldset>
+          <button type="submit" class="popup__save-button">Сохранить</button>
+          <button
+            type="button"
+            aria-label="Закрыть окно"
+            class="popup__close-button"
+          ></button>
+        </form>
       </div>
-    </section>
-
-    <section class="elements">
-      <ul class="elements__container">
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min01.jpg" alt="Фото Карачаевска">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Карачаевск</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min02.jpg" alt="Фото Горы Эльбрус">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Гора Эльбрус</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min03.jpg" alt="Фото Домбаев">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Домбай</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min04.jpg" alt="Фото Байкала">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Байкал</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min05.jpg" alt="Фото Ергаков">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Ергаки</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-        <li class="element">
-          <img class="element__photo" src="./images/places-card-photo-min06.jpg" alt="Фото Хибин">
-          <div class="element__photo-description">
-            <h2 class="element__photo-name">Хибины</h2>
-            <button type="button" aria-label="Лайк" class="element__like-button"></button>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
-  </footer>
-
-  <section class="popup " >
-    <form  class="popup__container">
-      <h3 class="popup__title">Редактировать профиль</h3>
-      <div class="popup__inputs">
-        <input type="text"  class="popup__input" value="Жак-Ив Кусто">
-        <input type="text"  class="popup__input" value="Исследователь океана">
-      </div>
-      <button type="submit" class="popup__save-button">Сохранить</button>
-      <button type="button" aria-label="Закрыть окно" class="popup__close-button"></button>
-    </form>
-  </section>
-
-</body>
-
+    </div>
+  </body>
 </html>
