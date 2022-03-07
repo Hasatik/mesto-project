@@ -6,6 +6,12 @@
   object-fit: cover;
 }
 
+
+.element__photo:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 /* @media screen and (max-width: 768px) {
   .element__photo {
     max-width: none;

@@ -6,7 +6,7 @@
   background: url("../../../images/Close-Icon.svg") no-repeat center/cover;
   top: -45px;
   right: -45px;
-  transition: .5s;
+  /* transition: .5s; */
   border: none;
 }
 

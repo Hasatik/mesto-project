@@ -29,7 +29,7 @@
           <button type="button" class="profile__edit-button"></button>
           <button
             type="button"
-            aria-label="Лайк"
+            aria-label="Добавить"
             class="profile__add-button"
           ></button>
         </div>
@@ -37,96 +37,7 @@
 
       <section class="elements">
         <ul class="elements__container">
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min01.jpg"
-              alt="Фото Карачаевска"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Карачаевск</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min02.jpg"
-              alt="Фото Горы Эльбрус"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Гора Эльбрус</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min03.jpg"
-              alt="Фото Домбаев"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Домбай</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min04.jpg"
-              alt="Фото Байкала"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Байкал</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min05.jpg"
-              alt="Фото Ергаков"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Ергаки</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
-          <li class="element">
-            <img
-              class="element__photo"
-              src="./images/places-card-photo-min06.jpg"
-              alt="Фото Хибин"
-            />
-            <div class="element__photo-description">
-              <h2 class="element__photo-name">Хибины</h2>
-              <button
-                type="button"
-                aria-label="Лайк"
-                class="element__like-button"
-              ></button>
-            </div>
-          </li>
+          
         </ul>
       </section>
     </main>
@@ -135,32 +46,107 @@
       <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
 
-    <div class="popup popup_opened">
+    <div class="popup popup-profession">
       <div class="popup__container">
-        <form name="popup" class="popup__form">
+        <form name="popup" class="popup__form popup__form-prof">
           <h3 class="popup__title">Редактировать профиль</h3>
           <fieldset class="popup__inputs">
             <input
               name="user"
               type="text"
-              class="popup__input"
-              value="Жак-Ив Кусто"
+              class="popup__input popup__input-name"
+              value=""
             />
             <input
               name="profession"
               type="text"
-              class="popup__input"
-              value="Исследователь океана"
+              class="popup__input popup__input-profession"
+              value=""
             />
           </fieldset>
-          <button type="submit" class="popup__save-button">Сохранить</button>
+          <button
+            type="submit"
+            class="popup__save-button popup__save-button-prof"
+          >
+            Сохранить
+          </button>
           <button
             type="button"
             aria-label="Закрыть окно"
-            class="popup__close-button"
+            class="popup__close-button popup-prof__close-button"
           ></button>
         </form>
       </div>
     </div>
+
+    <div class="popup popup-card">
+      <div class="popup__container">
+        <form name="popup" class="popup__form popup__form-card">
+          <h3 class="popup__title">Новое место</h3>
+          <fieldset class="popup__inputs">
+            <input
+              name="Title"
+              type="text"
+              class="popup__input popup__input-title"
+              value=""
+              placeholder="Название"
+            />
+            <input
+              name="Card"
+              type="link"
+              class="popup__input popup__input-link"
+              value=""
+              placeholder="Ссылка на картинку"
+            />
+          </fieldset>
+          <button
+            type="submit"
+            class="popup__save-button popup__save-button-card"
+          >
+            Сохранить
+          </button>
+          <button
+            type="button"
+            aria-label="Закрыть окно"
+            class="popup__close-button popup-card__close-button"
+          ></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup-img ">
+      <div class="popup__box">
+        <img src="" alt="" class="popup__img">
+        <p class="popup__caption"></p>
+        <button
+            type="button"
+            aria-label="Закрыть окно"
+            class="popup__close-button popup-img__close-button"
+          ></button>
+      </div>
+    </div>
+
+<!-- popup_opened -->
+
+
+    <template class="card-template">
+      <li class="element">
+        <img class="element__photo" src="" alt="" />
+        <div class="element__photo-description">
+          <h2 class="element__photo-name"></h2>
+          <button
+            type="button"
+            aria-label="Лайк"
+            class="element__like-button"
+          ></button>
+          <button
+            class="element__delete-button"
+            type="button"
+            aria-label="Удалить"
+          ></button>
+        </div>
+      </li>
+    </template>
+    <script src="./script.js"></script>
   </body>
 </html>
