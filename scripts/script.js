@@ -1,6 +1,5 @@
 
 const elements = document.querySelector('.elements__container');
-const popup = document.querySelectorAll('.popup');
 const addButton = document.querySelector('.profile__add-button');
 const editButton = document.querySelector('.profile__edit-button');
 const profileName = document.querySelector('.profile__name');
@@ -30,39 +29,13 @@ const closeButtonCard = popupCard.querySelector('.popup-card__close-button');
 
 // POPUP-IMG
 const popupImg = document.querySelector('.popup-img');
-const Img = popupImg.querySelector('.popup__img');
+const zoomImg = popupImg.querySelector('.popup__img');
 const popapCapt = popupImg.querySelector('.popup__caption');
 const closeButtonImg = popupImg.querySelector('.popup-img__close-button');
 
 // TEMPLATE
 
 
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
 
 
 function openPopup(popup){
@@ -73,7 +46,7 @@ function closePopup(popup){
     popup.classList.remove('popup_opened');
 }
 
-function formSubmitHandler (evt) {
+function submitFormProff (evt) {
   evt.preventDefault()
   profileName.textContent = nameProff.value;
   profileDesc.textContent = proff.value;
@@ -93,15 +66,19 @@ function createCard(element){
   cardElements.querySelector('.element__like-button').addEventListener('click',like);
   cardElements.querySelector('.element__delete-button').addEventListener('click', deleteCard);
   cardLink.addEventListener('click', showImage);
+  
   function showImage() {
-    Img.src = cardLink.src;
-    popapCapt.alt = cardTitle.textContent;
+    zoomImg.src = cardLink.src;
+    zoomImg.alt = cardTitle.textContent;
     popapCapt.textContent = cardTitle.textContent;
     openPopup(popupImg);
   }
+  
+  
 
   cardTitle.textContent = element.name;
   cardLink.src = element.link;
+  cardLink.alt = element.name;
   return cardElements
 
   
@@ -135,24 +112,16 @@ function addNewCard(){
     link : linkCard.value,
   }
   renderCard(createCard(newCard));
+  titleCard.value = "";
+  linkCard.value = "";
 }
-function formCardSubmitHandler (evt) {
+function submitFormCard (evt) {
   evt.preventDefault()
   addNewCard(titleCard.value, linkCard.value);
   closePopup(popupCard);
 }
 
-// function openImagePopup() {
-  
-//   openPopup(popupImg);
-// }
-function showImage(name, link) {
-  Img.src = link;
-  popapCapt.alt = name;
-  popapCapt.textContent = name;
-  openPopup(popupImg);
-}
-// Обработчики
+
 
 
 editButton.addEventListener('click', () => {
@@ -164,8 +133,8 @@ closeButtonProff.addEventListener('click', () => {
   closePopup(popupProff);
 })
 
-popupFormProff.addEventListener('submit', formSubmitHandler);
-popupFormCard.addEventListener('submit', formCardSubmitHandler);
+popupFormProff.addEventListener('submit', submitFormProff);
+popupFormCard.addEventListener('submit', submitFormCard);
 addButton.addEventListener('click' , ()=> {
   openPopup(popupCard);
 })
