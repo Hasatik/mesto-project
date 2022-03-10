@@ -2,8 +2,8 @@
     /* border: 1px solid red; */
     display: block;
     position: relative;
-    width: 75vw;
-    height: 75vh;
+    top: auto;
+    left: auto;
 }
 
 @media screen and (max-width:320px){
